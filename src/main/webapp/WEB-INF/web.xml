@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>opengti-vraptor-blank-project</display-name>
+
+	<!-- Configurações do Apache Tiles -->
+<filter>
+<filter-name>sitemesh</filter-name>
+<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+</filter>
+
+<filter-mapping>
+<filter-name>sitemesh</filter-name>
+<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+
+	<!-- Configurações do VRaptor -->
+
+	<filter>
+		<filter-name>vraptor</filter-name>
+		<filter-class>br.com.caelum.vraptor.VRaptor</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>vraptor</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
+	<!-- Context Params -->
+	
+	<context-param>
+		<param-name>facebook-app-id</param-name>
+		<param-value>445061462200108</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>facebook-app-secret</param-name>
+		<param-value>86c4b56dff205c4be42cc96f0ee1419d</param-value>
+	</context-param>
+	
+</web-app>
